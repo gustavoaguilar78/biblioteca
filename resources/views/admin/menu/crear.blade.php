@@ -1,6 +1,10 @@
 @extends("theme.$theme.layout")
 @section('titulo')
-   Sistema Menús 
+    Sistema Menús
+@endsection
+
+@section("scripts")
+<script src="{{asset("assets/pages/scripts/admin/menu/crear.js")}}" type="text/javascript"></script>
 @endsection
 
 @section('contenido')
@@ -10,9 +14,9 @@
         @include('includes.mensaje')
         <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Crear Menús</h3>
+                <h3 class="box-title">Crear Menús</h3>
             </div>
-            <form action="{{route('guardar_menu')}}" method="POST" id="form-general" class="form-horizontal">
+            <form action="{{route('guardar_menu')}}" id="form-general" class="form-horizontal" method="POST">
                 @csrf
                 <div class="box-body">
                     @include('admin.menu.form')
@@ -26,5 +30,5 @@
             </form>
         </div>
     </div>
-</div>
+</div> 
 @endsection
